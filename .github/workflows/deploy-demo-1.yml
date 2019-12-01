@@ -1,0 +1,19 @@
+name: NETLIFY DEMO 1 DEPLOYMENT
+
+on:
+  pull_request:
+    paths: 
+      - demo1
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: netlify deployment
+      run: |
+        yarn
+        yarn build:demo1
+        npx netlify-cli deploy --dir=demo1/dist
