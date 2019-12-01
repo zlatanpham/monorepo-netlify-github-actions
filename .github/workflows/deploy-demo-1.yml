@@ -7,16 +7,15 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: netlify deployment
-      env:
-        NETLIFY_SITE_ID: ${{ secrets.DEMO1_SITE_ID }}
-        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      run: |
-        yarn
-        yarn build:demo1
-        npx netlify-cli deploy --dir=demo1/dist --message='deployment for ${{ $GITHUB_REF }}'
+      - uses: actions/checkout@v1
+      - name: netlify deployment
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.DEMO1_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          yarn
+          yarn build:demo1
+          npx netlify-cli deploy --dir=demo1/dist --message='deployment for $GITHUB_REF'
