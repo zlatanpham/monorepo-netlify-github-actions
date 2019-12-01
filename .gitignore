@@ -1,0 +1,14 @@
+node_modules
+dist
+.env
+build
+*.log
+.DS_Store
+storybook-static
+.cache
+
+# Test
+/coverage
+
+# production
+/build

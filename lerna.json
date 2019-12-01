@@ -1,0 +1,7 @@
+{
+  "packages": ["demo1", "demo2"],
+  "npmClient": "yarn",
+  "lerna": "3.14.1",
+  "version": "0.0.0",
+  "useWorkspaces": true
+}

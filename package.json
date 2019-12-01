@@ -1,0 +1,21 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "prepare": "rimraf ui/build && lerna run prepare",
+    "clean": "lerna clean",
+    "build": "yarn prepare && lerna run --parallel build",
+    "start:demo1": "lerna exec --scope=@mono/demo1 -- yarn start",
+    "start:demo2": "lerna exec --scope=@mono/demo2 -- yarn start",
+    "build:demo1": "lerna exec --scope=@mono/demo1 -- yarn build",
+    "build:demo2": "lerna exec --scope=@mono/demo2 -- yarn build"
+  },
+  "devDependencies": {
+    "lerna": "^3.14.1"
+  },
+  "workspaces": [
+    "./demo1",
+    "./demo2"
+  ]
+}
