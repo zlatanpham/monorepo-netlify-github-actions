@@ -13,6 +13,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: netlify deployment
+      env:
+        NETLIFY_SITE_ID: ${{ secrets.DEMO2_SITE_ID }}
+        NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
       run: |
         yarn
         yarn build:demo2
