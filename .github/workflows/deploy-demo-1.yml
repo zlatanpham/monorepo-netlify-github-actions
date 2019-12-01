@@ -3,7 +3,7 @@ name: NETLIFY DEMO 1 DEPLOYMENT
 on:
   pull_request:
     paths: 
-      - demo1
+      - demo1/**
 
 jobs:
   build:
