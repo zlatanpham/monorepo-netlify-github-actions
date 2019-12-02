@@ -1,0 +1,23 @@
+name: NETLIFY DEMO 1 MERGE TO DEVELOP
+
+on:
+  push:
+    branch:
+      - develop
+    paths:
+      - demo1/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: netlify deployment
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.DEMO1_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          yarn
+          yarn build:demo1
+          npx netlify-cli deploy --dir=demo1/dist --prod --message='merge demo1 branch to develop'
