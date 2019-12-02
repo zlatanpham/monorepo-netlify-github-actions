@@ -2,7 +2,7 @@ name: NETLIFY DEMO 1 MERGE TO DEVELOP
 
 on:
   push:
-    branch:
+    branches:
       - develop
     paths:
       - demo1/**
